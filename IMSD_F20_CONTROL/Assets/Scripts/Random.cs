@@ -10,7 +10,7 @@ public class Random : MonoBehaviour
     public Transform myTransform;
     public float timer;
     private float x;
-    private float y;
+    private double y;
     private float z;
     // Start is called before the first frame update
     void Start()
@@ -24,10 +24,13 @@ public class Random : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        x = UnityEngine.Random.Range(-18.5f,-3.0f);
+        y = 1.5;
+        z = UnityEngine.Random.Range(0.0f,19.5f);
         if(timer >= 1)
         {
             timer = 0; 
-            //myTransform.position = new Vector3(Random.Range(-10f,10f), Random.Range(-10f,10f), Random.Range(-10f,10f));
+            myTransform.position = new Vector3((float)x, (float)y, z);
         }    
     }
 }

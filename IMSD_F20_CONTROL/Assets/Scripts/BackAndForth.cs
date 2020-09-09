@@ -7,16 +7,24 @@ public class BackAndForth : MonoBehaviour
     public Transform myTransform;
     public float speed;
     private float timer;
-    public float max;
-    public float min;
+    public double max;
+    public double min;
     private bool increasing;
     // Start is called before the first frame update
     void Start()
     {
         timer = 0;
         speed = 1;
-        max = 10;
-        min = -10;
+        if(this.transform.position.z > 0)
+        {
+            max = 19.5;
+            min = 1;
+        }
+        if(this.transform.position.z < 0)
+        {
+            max = -1;
+            min = -19.5;
+        }
         increasing = true;
     }
 
